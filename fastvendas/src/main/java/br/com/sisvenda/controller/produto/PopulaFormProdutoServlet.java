@@ -1,7 +1,9 @@
-package br.com.sisvenda.controller;
+package br.com.sisvenda.controller.produto;
+
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,23 +14,26 @@ import br.com.sisvenda.model.Produto;
 import br.com.sisvenda.service.ProdutoService;
 
 
-@WebServlet("/atualizaProduto")
-public class AtualizaProdutoServlet extends HttpServlet {
+@WebServlet("/populaFormProduto")
+public class PopulaFormProdutoServlet extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 
-    public AtualizaProdutoServlet() {
+	public PopulaFormProdutoServlet() {
     }
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String id = request.getParameter("id");
-		String descricao = request.getParameter("descricao");
-		String vlrUnitario = request.getParameter("vlrUnitario");
+		ProdutoService PodutoService = new ProdutoService();
+		Produto produto = PodutoService.findById(Integer.parseInt(id));
 		
-		Produto produto = new Produto(Integer.parseInt(id), descricao, Double.parseDouble(vlrUnitario));
-		ProdutoService service = new ProdutoService();
-		service.update(produto);
+		request.setAttribute("produto", produto);
 		
-		response.sendRedirect("listaProduto");
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("atualizaProduto.jsp");
+		dispatcher.forward(request, response);
+		
 	}
 
 }

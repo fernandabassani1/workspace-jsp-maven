@@ -1,4 +1,4 @@
-package br.com.sisvenda.controller;
+package br.com.sisvenda.controller.cliente;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package br.com.sisvenda.controller;
+package br.com.sisvenda.controller.produto;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

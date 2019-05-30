@@ -1,4 +1,4 @@
-package br.com.sisvenda.controller;
+package br.com.sisvenda.controller.produto;
 
 import java.io.IOException;
 
@@ -9,27 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.sisvenda.service.ClienteService;
 
-@WebServlet("/excluirCliente")
-public class ExcluirClienteServlet extends HttpServlet {
+@WebServlet("/produtoSalvo")
+public class SalvoSucessoProdutoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-
-    public ExcluirClienteServlet() {}
+      
+    public SalvoSucessoProdutoServlet() {
+        
+    }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//pegar parametros do html (fromtend)
+	/*	response.sendRedirect("salvo");*/
 		
-		
-		String id = request.getParameter("id");
-		
-		ClienteService service = new ClienteService();
-		service.delete(Integer.parseInt(id));
-		
-		response.sendRedirect("listaCliente");
-		 
+		RequestDispatcher dispatcher = request.getRequestDispatcher("salvoSucessoProduto.jsp");
+		dispatcher.forward(request, response);
 	}
+	//comentando aqui :)
 
 }
