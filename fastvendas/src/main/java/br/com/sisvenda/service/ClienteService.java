@@ -19,10 +19,7 @@ public class ClienteService {
 	public ClienteService() {
 	}
 
-	public Cliente criarCliente(String nome, String documento){
-		Cliente cliente = new Cliente();
-		cliente.setNome(nome); 
-		cliente.setDocumento(documento);
+	public Cliente criarCliente(Cliente cliente){
 		repository.salvarCliente(cliente);	
 		return cliente;		
 	}
