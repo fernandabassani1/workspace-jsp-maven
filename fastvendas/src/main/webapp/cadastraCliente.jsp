@@ -22,18 +22,18 @@
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Cadastrar</div>
       <div class="card-body">
-        <form>
+		<form action="<c:url value = "cadastraCliente"/>" method="post">
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="text" id="firstName" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
-                  <label for="firstName">nome</label>
+                  <input type="text" id="firstName" class="form-control" placeholder="First name" name="nome" autofocus="autofocus">
+                  <label for="firstName" >nome</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="text" id="lastName" class="form-control" placeholder="Last name" required="required">
+                  <input type="text" id="lastName" class="form-control" placeholder="Last name" name="sobrenome">
                   <label for="lastName">sobrenome</label>
                 </div>
               </div>
@@ -41,21 +41,23 @@
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-              <label for="inputEmail">endereco</label>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email">
+              <label for="inputEmail">email</label>
             </div>
           </div>
+          
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                  <label for="inputPassword">cep</label>
+                  <input type="text" id="inputPassword" class="form-control" placeholder="Password" name="documento">
+                  <label for="inputPassword">documento</label>
                 </div>
               </div>
+              
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
+                  <input type="text" id="confirmPassword" class="form-control" placeholder="Confirm password" name="telefone">
                   <label for="confirmPassword">telefone</label>
                 </div>
               </div>
@@ -64,28 +66,27 @@
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-              <label for="inputEmail">email</label>
+              <input type="text" id="inputEmail" class="form-control" placeholder="Email address" name="endereco">
+              <label for="inputEmail">endereço</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                  <label for="inputPassword">senha</label>
+                  <input type="text" id="inputPassword" class="form-control" placeholder="Password" name="cep">
+                  <label for="inputPassword">cep</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
-                  <label for="confirmPassword">confirmar Senha</label>
+                  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" name="senha">
+                  <label for="confirmPassword">senha</label>
                 </div>
               </div>
-              
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="login.html">Registrar</a>
+          <button class="btn btn-primary btn-block" type="submit">Registrar </button>
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="#">Login Page</a>
