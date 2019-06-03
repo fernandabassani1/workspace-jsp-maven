@@ -18,7 +18,7 @@ public class ClienteRepository {
 
 	AcessoMySql db = new AcessoMySql();
 	
-	String sql_insert = "INSERT INTO cliente (nome, cpf) VALUES (?,?)";
+	String sql_insert = "INSERT INTO cliente (nome, sobrenome, email, documento, telefone, endereco, cep, senha) VALUES (?,?,?,?,?,?,?,?)";
 	String sql_select_clientes = "SELECT * FROM cliente c";
 	String sql_select_nome_cpf = "SELECT * FROM cliente c WHERE c.nome LIKE ? AND c.documento LIKE ?";
 	String sql_delete = "DELETE FROM cliente WHERE id = ?";
@@ -32,11 +32,17 @@ public class ClienteRepository {
 		try {
 			pstm = db.conectar().prepareStatement(sql_insert);
 			pstm.setString(1,cliente.getNome());
-			pstm.setString(2, cliente.getDocumento());
+			pstm.setString(2, cliente.getSobrenome());
+			pstm.setString(3, cliente.getEmail());
+			pstm.setString(4, cliente.getDocumento());
+			pstm.setString(5, cliente.getTelefone());
+			pstm.setString(6, cliente.getEndereco());
+			pstm.setString(7, cliente.getCep());
+			pstm.setString(8, cliente.getSenha());
 			pstm.executeUpdate(); 
 			db.desconectar();
 			
-			System.out.println("Cliente "+ cliente.getNome() + " Documento"+ cliente.getDocumento()+ " Salvo com sucesso." );
+			System.out.println("Cliente Salvo com sucesso." );
 			
 		} catch (SQLException e) {
 			System.out.println("Erro ao salvar");
@@ -61,7 +67,12 @@ public class ClienteRepository {
 				cliente = new Cliente();
 				cliente.setId(rs.getInt("id"));
 				cliente.setNome(rs.getString("nome"));
+				cliente.setSobrenome(rs.getString("sobrenome"));
+				cliente.setEmail(rs.getString("email"));
 				cliente.setDocumento(rs.getString("documento"));
+				cliente.setTelefone(rs.getString("telefone"));
+				cliente.setEndereco(rs.getString("endereco"));
+				cliente.setCep(rs.getString("cep"));
 				listando.add(cliente);
 				
 			} 
