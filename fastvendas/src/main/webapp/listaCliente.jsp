@@ -12,7 +12,7 @@
         <!-- Breadcrumbs-->
          <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="home">Home</a>
+            <a href="cadastraClienteForm">Cadastrar-Cliente</a>
           </li>
         </ol>
      
@@ -20,39 +20,45 @@
        <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Data Table Example</div>
+            Clientes</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Email</th>
+                    <th>Documento</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>cep</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Email</th>
+                    <th>Documento</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>Cep</th>
                   </tr>
                 </tfoot>
                 <tbody>
+                <c:forEach var="cliente" items="${clientes}">
                   <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
+                    <td>${cliente.nome}</td>
+                    <td>${cliente.sobrenome}</td>
+                    <td>${cliente.email}</td>
+                    <td>${cliente.documento}</td>
+                    <td>${cliente.telefone}</td>
+                    <td>${cliente.endereco}</td>
+                    <td>${cliente.cep}</td>
+                    
                   </tr>
+                  </c:forEach>
                 </tbody>
               </table>
             </div>
