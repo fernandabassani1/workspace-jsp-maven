@@ -38,7 +38,7 @@ public class CadastraClienteServlet extends HttpServlet {
 		ClienteService service = new ClienteService();
 		service.criarCliente(new Cliente(null,nome, sobrenome, email, documento, telefone, endereco, cep, senha));
 				
-		response.sendRedirect("cadastraClienteForm");
+		response.sendRedirect("listaCliente");
 		
 		
 	}
