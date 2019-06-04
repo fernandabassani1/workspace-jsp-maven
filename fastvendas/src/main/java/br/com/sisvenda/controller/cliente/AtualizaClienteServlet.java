@@ -25,11 +25,19 @@ public class AtualizaClienteServlet extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String nome = request.getParameter("nome");
+		String sobrenome= request.getParameter("sobrenome");
+		String email = request.getParameter("email");
 		String documento = request.getParameter("documento");
+		String telefone = request.getParameter("telefone");
+		String endereco = request.getParameter("endereco");
+		String cep = request.getParameter("cep");
+		String senha = request.getParameter("senha");
+
 		
-		Cliente cliente = new Cliente(Integer.parseInt(id),nome,documento);
+		
+		Cliente cliente = new Cliente(Integer.parseInt(id), nome, sobrenome, email, documento, telefone, endereco, cep, senha);
 		ClienteService clienteService = new ClienteService();
-		clienteService.update(cliente);
+		clienteService.update(cliente); 
 		
 		response.sendRedirect("listaCliente");
 	}
