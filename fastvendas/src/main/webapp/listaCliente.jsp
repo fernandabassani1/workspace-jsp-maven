@@ -26,7 +26,6 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                  	<th></th>
                     <th>Nome</th>
                     <th>Sobrenome</th>
                     <th>Email</th>
@@ -34,13 +33,12 @@
                     <th>Telefone</th>
                     <th>Endereço</th>
                     <th>cep</th>
-                    <th colspan="7"></th>
-                    <th colspan="7"> </th>
+                    <th colspan="2" style="text-align: center">Opções</th>
+                    
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                  	<th></th>
                     <th>Nome</th>
                     <th>Sobrenome</th>
                     <th>Email</th>
@@ -48,14 +46,13 @@
                     <th>Telefone</th>
                     <th>Endereço</th>
                     <th>Cep</th>
-    				<th colspan="7"></th>
-                    <th colspan="7"> </th>
+    				<th style="text-align: center">Opções</th>
+                    
                   </tr>
                 </tfoot>
                 <tbody>
                 <c:forEach var="cliente" items="${clientes}">
                   <tr>
-                  	<td>${cliente.id}</td>
                     <td>${cliente.nome}</td>
                     <td>${cliente.sobrenome}</td>
                     <td>${cliente.email}</td>
@@ -63,11 +60,15 @@
                     <td>${cliente.telefone}</td>
                     <td>${cliente.endereco}</td>
                     <td>${cliente.cep}</td>
-                    <td colspan="7"><a href="#" class="btn btn-outline-primary">Atualizar</a>
-                    <td colspan="7"><a href="excluirCliente?id=${cliente.id}" class="btn btn-outline-danger">Excluir</a>
-                    
+                    <td colspan="2" style=" text-align: center;">
+                    <a href="populaForm?id=${cliente.id}" > 
+                    <i class="fas fa-edit" ></i>
+                    </a>
+                   
+                    <a href="excluirCliente?id=${cliente.id}">
+					<i class="fas fa-trash-alt"  style="color: red;"></i>                       
+                     </a>
                     </td>
-                    
                   </tr>
                   </c:forEach>
                 </tbody>
