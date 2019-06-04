@@ -22,7 +22,7 @@ public class ClienteRepository {
 	String sql_select_clientes = "SELECT * FROM cliente c";
 	String sql_select_nome_cpf = "SELECT * FROM cliente c WHERE c.nome LIKE ? AND c.documento LIKE ?";
 	String sql_delete = "DELETE FROM cliente WHERE id = ?";
-	String sql_update = "UPDATE  cliente c set c.nome = ? , c.documento = ? where c.id = ?"; //ATUALIZAR
+	String sql_update = "UPDATE  cliente c set c.nome = ? , c.sobrenome = ? , c.email = ? , c.documento = ? , c.telefone = ? , c.endereco = ? , c.cep = ? where c.id = ?"; //ATUALIZAR
 	String sql_findById = "SELECT * FROM Cliente WHERE id = ?";
 	
 	//criando metodo de salvar cliente no banco
@@ -146,7 +146,15 @@ public class ClienteRepository {
 				cliente = new Cliente();
 				cliente.setId(rs.getInt("id"));
 				cliente.setNome(rs.getString("nome"));
+				cliente.setSobrenome(rs.getString("sobrenome"));
+				cliente.setEmail(rs.getString("email"));
 				cliente.setDocumento(rs.getString("documento"));
+				cliente.setTelefone(rs.getString("telefone"));
+				cliente.setEndereco(rs.getString("endereco"));
+				cliente.setCep(rs.getString("cep"));
+				
+				
+				
 			}
 			
 	     System.out.println(cliente);		
@@ -163,8 +171,13 @@ public class ClienteRepository {
 		try {
 			pstm = db.conectar().prepareStatement(sql_update);
 			pstm.setString(1,cliente.getNome());
-			pstm.setString(2, cliente.getDocumento());
-			pstm.setInt(3,cliente.getId());
+			pstm.setString(2, cliente.getSobrenome());
+			pstm.setString(3, cliente.getEmail());
+			pstm.setString(4, cliente.getDocumento());
+			pstm.setString(5, cliente.getTelefone());
+			pstm.setString(6, cliente.getEndereco());
+			pstm.setString(7, cliente.getCep());
+			pstm.setInt(8,cliente.getId());
 			pstm.executeUpdate();
 			db.desconectar();
 			
