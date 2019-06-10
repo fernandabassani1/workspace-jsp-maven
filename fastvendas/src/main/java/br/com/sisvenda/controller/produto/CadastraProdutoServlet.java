@@ -17,15 +17,13 @@ public class CadastraProdutoServlet extends HttpServlet {
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String Descricao = request.getParameter("descricao");
-		double Valor = Double.parseDouble(request.getParameter("valor"));
+		String descricao = request.getParameter("descricao");
+		double vlrUnitario = Double.parseDouble(request.getParameter("vlrUnitario"));
 		
-		ProdutoService service = new  ProdutoService();
-		service.criarProduto(Descricao, Valor);
-			
+		ProdutoService service = new ProdutoService();
+		service.criarProduto(descricao, vlrUnitario);
 		
-/*		
-*/		response.sendRedirect("produtoSalvo");
+		response.sendRedirect("cadastraProduto.jsp");
 
 		
 
