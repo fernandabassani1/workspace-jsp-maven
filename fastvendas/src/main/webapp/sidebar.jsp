@@ -28,7 +28,7 @@
          
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Cadastro de Produtos</h6>
-           <a class="dropdown-item" href="#">Cadastrar</a>
+           <a class="dropdown-item" href="cadastraProduto.jsp">Cadastrar</a>
           <a class="dropdown-item" href="#">Pesqusiar</a>
           
             <div class="dropdown-divider"></div>
