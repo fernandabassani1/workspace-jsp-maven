@@ -24,7 +24,7 @@ public class ListaProdutoServlet extends HttpServlet {
 
 		List<Produto> produtos = new ProdutoService().listaProdutos();
 		
-		request.setAttribute("listaProdutos", produtos);  
+		request.setAttribute("produtos", produtos);  
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("listaProduto.jsp");
 		dispatcher.forward(request, response);
