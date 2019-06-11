@@ -20,7 +20,7 @@
        <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Clientes</div>
+            Produtos</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -45,14 +45,14 @@
                   <tr>
                     <td>${produto.descricao}</td>
                     <td>${produto.vlrUnitario}</td>
+                    
                     <td colspan="2" style=" text-align: center;">
-                    <%-- <a href="populaForm?id=${produto.id}" > 
+                    <a href="populaFormProduto?id=${produto.id}" > 
                     <i class="fas fa-edit" ></i>
                     </a>
-                   
-                    <a href="excluirCliente?id=${cliente.id}">
+                    <a href="excluirProduto?id=${produto.id}">
 					<i class="fas fa-trash-alt"  style="color: red;"></i>                       
-                     </a> --%>
+                     </a> 
                     </td>
                   </tr>
                   </c:forEach>
