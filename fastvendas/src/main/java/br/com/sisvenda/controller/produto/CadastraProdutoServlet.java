@@ -23,7 +23,7 @@ public class CadastraProdutoServlet extends HttpServlet {
 		ProdutoService service = new ProdutoService();
 		service.criarProduto(descricao, vlrUnitario);
 		
-		response.sendRedirect("cadastraProduto.jsp");
+		response.sendRedirect("listaProduto");
 
 		
 
