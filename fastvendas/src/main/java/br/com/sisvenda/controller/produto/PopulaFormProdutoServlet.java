@@ -28,7 +28,7 @@ public class PopulaFormProdutoServlet extends HttpServlet {
 		ProdutoService PodutoService = new ProdutoService();
 		Produto produto = PodutoService.findById(Integer.parseInt(id));
 		
-		request.setAttribute("produto", produto);
+		request.setAttribute("produtoForm", produto);
 		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("atualizaProduto.jsp");
