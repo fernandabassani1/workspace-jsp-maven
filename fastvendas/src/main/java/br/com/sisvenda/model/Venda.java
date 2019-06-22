@@ -1,16 +1,38 @@
 package br.com.sisvenda.model;
 
-import java.util.List;
+import java.util.Date;
 
 public class Venda {
 	
+	private Integer id;
 	private Cliente cliente;
 	private Funcionario funcionario;
-	private List<Produto> produto;
-	private Venda venda;
-	private String data;
+	private Date data;
+	private double total;
 	
 	public Venda() {}
+	
+	public Venda(Integer id) {
+		this.id = id;
+	}
+
+	public Venda(Integer id, Cliente cliente, Funcionario funcionario, Date data, double total) {
+		this.id = id;
+		this.cliente = cliente;
+		this.funcionario = funcionario;
+		this.data = data;
+		this.total = total;
+	}
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public Cliente getCliente() {
 		return cliente;
@@ -28,38 +50,25 @@ public class Venda {
 		this.funcionario = funcionario;
 	}
 
-	public List<Produto> getProduto() {
-		return produto;
-	}
-
-	public void setProduto(List<Produto> produto) {
-		this.produto = produto;
-	}
-
-	public Venda getVenda() {
-		return venda;
-	}
-
-	public void setVenda(Venda venda) {
-		this.venda = venda;
-	}
-
-	public String getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 
-	@Override
-	public String toString() {
-		return "Venda [cliente=" + cliente + ", funcionario=" + funcionario + ", produto=" + produto + ", venda="
-				+ venda + ", data=" + data + "]";
+
+	public double getTotal() {
+		return total;
 	}
 
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	
 	
 
-	
-	
+		
 }

@@ -57,7 +57,7 @@
 					<i class="fas fa-trash-alt"  style="color: red;"></i>                       
                      </a> 
                     </td>
-                    modific
+                    
                   </tr>
                   </c:forEach>
                 </tbody>

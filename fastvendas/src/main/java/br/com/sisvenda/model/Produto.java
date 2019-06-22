@@ -8,6 +8,10 @@ public class Produto {
 	
 	public Produto() {}
 	
+	public Produto(Integer id) {
+		this.id = id;
+	}
+
 	public Produto(Integer id, String descricao, double vlrUnitario) {
 		this.id = id;
 		this.descricao = descricao;
@@ -29,7 +33,6 @@ public class Produto {
 	public void setVlrUnitario(double vlrUnitario) {
 		this.vlrUnitario = vlrUnitario;
 	}
-
 	
 
 	public Integer getId() {

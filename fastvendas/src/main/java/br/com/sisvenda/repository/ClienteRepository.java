@@ -29,9 +29,10 @@ public class ClienteRepository {
 	public void salvarCliente(Cliente cliente){
 		PreparedStatement pstm;
 		
+		
 		try {
 			pstm = db.conectar().prepareStatement(sql_insert);
-			pstm.setString(1,cliente.getNome());
+			pstm.setString(1, cliente.getNome());
 			pstm.setString(2, cliente.getSobrenome());
 			pstm.setString(3, cliente.getEmail());
 			pstm.setString(4, cliente.getDocumento());
@@ -39,16 +40,16 @@ public class ClienteRepository {
 			pstm.setString(6, cliente.getEndereco());
 			pstm.setString(7, cliente.getCep());
 			pstm.setString(8, cliente.getSenha());
-			pstm.executeUpdate(); 
+			pstm.executeUpdate();
 			db.desconectar();
 			
-			System.out.println("Cliente Salvo com sucesso." );
+			System.out.println(cliente + "salvo com sucesso");
 			
 		} catch (SQLException e) {
-			System.out.println("Erro ao salvar");
+			System.out.println("Erro ao executar no banco");
 			e.printStackTrace();
 		}
-	 
+		
 	}
 	//lista de clientes
 	public List<Cliente> listaDecliente(){
