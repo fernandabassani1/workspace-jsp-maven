@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 @WebFilter("/*")
 public class LoginFilter implements Filter {
+	// aaaa
     
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -35,6 +36,7 @@ public class LoginFilter implements Filter {
         
         else {
         	res.sendRedirect("login.jsp");
+        
         }
 	}
 
